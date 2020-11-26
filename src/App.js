@@ -1,13 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from './images/mesto-logo.svg';
+import editbutton from './images/edit.svg';
+import addbutton from './images/add-buton.svg';
+import popupclose from './images/Close Icon.svg';
 
 function App() {
   return (
     <div className="page">
         <div className="page__content">
             <header className="header">
-                <img className="header__logo logo" src="./images/mesto-logo.svg" alt="Логотип Mesto" />
+                <img className="header__logo logo" src={logo} alt="Логотип Mesto" />
             </header>
             <div className="main">
                 <main className="content">
@@ -18,12 +20,12 @@ function App() {
                         <div className="profile__info">
                             <h1 className="profile__title"></h1>
                             <button className="profile__edit-button" type="button">
-                                <img className="profile__edit-button-image" src="./images/edit.svg" alt="Редактировать" />
+                                <img className="profile__edit-button-image" src={editbutton} alt="Редактировать" />
                             </button>
                             <p className="profile__subtitle"></p>
                         </div>
                         <button className="profile__add-button" type="button">
-                            <img className="profile__add-button-image" src="./images/add-buton.svg" alt="Добавить фото" />
+                            <img className="profile__add-button-image" src={addbutton} alt="Добавить фото" />
                         </button>
                     </section>
 
@@ -42,7 +44,7 @@ function App() {
       <section className="popup popup_type_edit">
         <div className="popup__container">
             <button className="popup__close popup__close_type_editform" type="button">
-                <img className="popup__close-image" src="./images/Close Icon.svg" alt="Закрыть форму редактирования" />
+                <img className="popup__close-image" src={popupclose} alt="Закрыть форму редактирования" />
             </button>
             <div className="popup__content">
                 <h3 className="popup__title">Редактировать профиль</h3>
@@ -64,7 +66,7 @@ function App() {
     <section className="popup popup_type_add">
         <div className="popup__container">
             <button className="popup__close popup__close_type_addform" type="button">
-                <img className="popup__close-image" src="./images/Close Icon.svg" alt="Закрыть окно добавления" />
+                <img className="popup__close-image" src={popupclose} alt="Закрыть окно добавления" />
             </button>
             <div className="popup__content">
                 <h3 className="popup__title">Новое место</h3>
@@ -86,7 +88,7 @@ function App() {
     <section className="popup popup_type_img">
         <div className="popup__container-img">
             <button className="popup__close popup__close_type_img" type="button">
-                <img className="popup__close-image" src="./images/Close Icon.svg"
+                <img className="popup__close-image" src={popupclose}
                     alt="Закрыть окно просмотра изображения" />
             </button>
             <img className="popup__image" src="#" />
@@ -97,7 +99,7 @@ function App() {
     <section className="popup popup_type_avatar">
         <div className="popup__container">
             <button className="popup__close popup__close_type_img" type="button">
-                <img className="popup__close-image" src="./images/Close Icon.svg" alt="Закрыть окно обновления аватара" />
+                <img className="popup__close-image" src={popupclose} alt="Закрыть окно обновления аватара" />
             </button>
             <div className="popup__content">
                 <h3 className="popup__title">Обновить аватар</h3>
@@ -116,7 +118,7 @@ function App() {
     <section className="popup popup_type_delete">
         <div className="popup__container popup__container-delete">
             <button className="popup__close popup__close_type_img" type="button">
-                <img className="popup__close-image" src="./images/Close Icon.svg" alt="Закрыть окно обновления аватара" />
+                <img className="popup__close-image" src={popupclose} alt="Закрыть окно обновления аватара" />
             </button>
             <div className="popup__content">
                 <h3 className="popup__title popup__title-delete">Вы уверены?</h3>
@@ -135,7 +137,7 @@ function App() {
             <div className="element__info">
                 <h2 className="element__title"></h2>
                 <button className="element__like-button" type="button">
-                    <img className="element__like-image" src="./images/heart.svg" alt="Поставить лайк" />
+                    <img className="element__like-image" src={popupclose} alt="Поставить лайк" />
                 </button>
                 <div className="element__likes"></div>
                 <button className="element__delete-button" type="button"></button>
