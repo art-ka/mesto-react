@@ -1,0 +1,4 @@
+.element__like-image-active {
+    background-image: url(../../../images/black-heart.svg);
+    width: 21px;
+}
