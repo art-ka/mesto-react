@@ -5,36 +5,63 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
+import ImagePopup from './ImagePopup';
 
 
 function App() {
+
+    const [isEditProfilePopupOpen, setisEditProfilePopupOpen] = React.useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+
+    function handleEditProfileClick() {
+        setisEditProfilePopupOpen(true);
+    }
+
+    function handleAddPlaceClick() {
+        setIsAddPlacePopupOpen(true);
+    }
+
+    function handleEditAvatarClick() {
+        setIsEditAvatarPopupOpen(true);
+    }
+
+    function closeAllPopups() {
+        setisEditProfilePopupOpen(false);
+        setIsAddPlacePopupOpen(false);
+        setIsEditAvatarPopupOpen(false);
+    }
+
+
     return (
         <div className="page">
             <div className="page__content">
                 <Header />
                 <div className="main">
-                    <Main />
+                    <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
+                        onEditAvatar={handleEditAvatarClick} />
                     <Footer />
                 </div>
             </div>
 
-            <>
-                <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" />
-                <PopupWithForm name="add" title="Новое место" button="Создать" />
-                <PopupWithForm name="avatar" title="Обновить аватар" button="Сохранить" />
-                <PopupWithForm name="delete" title="Вы уверены?" button="Да" />
-            </>
+            {isEditProfilePopupOpen ? (
+                <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}/>
+            ) : ("")
+            }
 
-            <section className="popup popup_type_img">
-                <div className="popup__container-img">
-                    <button className="popup__close popup__close_type_img" type="button">
-                        <img className="popup__close-image" src={popupclose}
-                            alt="Закрыть окно просмотра изображения" />
-                    </button>
-                    <img className="popup__image" src="#" />
-                    <h3 className="popup__caption"></h3>
-                </div>
-            </section>
+            {isAddPlacePopupOpen ? (
+                <PopupWithForm name="add" title="Новое место" button="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}/>
+            ) : ("")
+            }
+
+            {isEditAvatarPopupOpen ? (
+                <PopupWithForm name="avatar" title="Обновить аватар" button="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}/>
+            ) : ("")
+            }
+
+            <PopupWithForm name="delete" title="Вы уверены?" button="Да" onClose={closeAllPopups} />
+
+            <ImagePopup />
 
             <template id="elements">
                 <li className="element__cards">
