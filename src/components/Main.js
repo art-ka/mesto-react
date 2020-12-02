@@ -1,24 +1,40 @@
 import React from 'react';
 import editbutton from '../images/edit.svg';
 import addbutton from '../images/add-buton.svg';
+import api from '../utils/api';
 
 function Main(props) {
+    const [userName, setUserName] = React.useState();
+    const [userDescription, setUserDescription] = React.useState();
+    const [userAvatar, setUserAvatar] = React.useState();
 
-    
+
+    React.useEffect(() => {
+        api.takeUserInfo()
+            .then((data) => {
+                setUserName(data.name)
+                setUserDescription(data.about);
+                setUserAvatar(data.avatar);
+            })
+            .catch((err) => {
+                console.log(err); // выведем ошибку в консоль
+            })
+    });
+
     return (
         <main className="content">
             <section className="profile">
-                <div className="profile__user" onClick={ props.onEditAvatar }>
-                    <img src="#" alt="Аватарка пользователя" className="profile__avatar" />
+                <div className="profile__user" onClick={props.onEditAvatar}>
+                    <img src={userAvatar} alt="Аватарка пользователя" className="profile__avatar" />
                 </div>
                 <div className="profile__info">
-                    <h1 className="profile__title"></h1>
-                    <button className="profile__edit-button" type="button" onClick={ props.onEditProfile } >
+                    <h1 className="profile__title">{userName}</h1>
+                    <button className="profile__edit-button" type="button" onClick={props.onEditProfile} >
                         <img className="profile__edit-button-image" src={editbutton} alt="Редактировать" />
                     </button>
-                    <p className="profile__subtitle"></p>
+                    <p className="profile__subtitle">{userDescription}</p>
                 </div>
-                <button className="profile__add-button" type="button" onClick={ props.onAddPlace }>
+                <button className="profile__add-button" type="button" onClick={props.onAddPlace}>
                     <img className="profile__add-button-image" src={addbutton} alt="Добавить фото" />
                 </button>
             </section>

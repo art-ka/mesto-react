@@ -6,6 +6,7 @@ import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
+//import api from '../utils/api';
 
 
 function App() {
@@ -45,21 +46,21 @@ function App() {
             </div>
 
             {isEditProfilePopupOpen ? (
-                <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}/>
+                <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
             ) : ("")
             }
 
             {isAddPlacePopupOpen ? (
-                <PopupWithForm name="add" title="Новое место" button="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups}/>
+                <PopupWithForm name="add" title="Новое место" button="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
             ) : ("")
             }
 
             {isEditAvatarPopupOpen ? (
-                <PopupWithForm name="avatar" title="Обновить аватар" button="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}/>
+                <PopupWithForm name="avatar" title="Обновить аватар" button="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />
             ) : ("")
             }
 
-            <PopupWithForm name="delete" title="Вы уверены?" button="Да" onClose={closeAllPopups} />
+            {/* <PopupWithForm name="delete" title="Вы уверены?" button="Да" onClose={closeAllPopups} /> */}
 
             <ImagePopup />
 
