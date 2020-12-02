@@ -2,6 +2,7 @@ import React from 'react';
 import editbutton from '../images/edit.svg';
 import addbutton from '../images/add-buton.svg';
 import popupclose from '../images/Close Icon.svg';
+import likebutton from '../images/heart.svg';
 import api from '../utils/api';
 
 function Main(props) {
@@ -70,7 +71,7 @@ function Main(props) {
                     <div className="element__info">
         <h2 className="element__title">{item.name}</h2>
                         <button className="element__like-button" type="button">
-                            <img className="element__like-image" src={popupclose} alt="Поставить лайк" />
+                            <img className="element__like-image" src={likebutton} alt="Поставить лайк" />
                         </button>
                         <div className="element__likes">{item.like}</div>
                         <button className="element__delete-button" type="button"></button>
