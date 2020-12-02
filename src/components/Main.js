@@ -69,7 +69,8 @@ function Main(props) {
                                 key={item.id}
                                 src={item.src}
                                 name={item.name}
-                                like={item.like} />
+                                like={item.like} 
+                                onCardClick={props.onCardClick}  />
                         )
                     }
                     )}

@@ -5,7 +5,6 @@ import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
-//import api from '../utils/api';
 
 
 function App() {
@@ -13,6 +12,7 @@ function App() {
     const [isEditProfilePopupOpen, setisEditProfilePopupOpen] = React.useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+    const [selectedCard, setSelectedCard] = React.useState(false);
 
     function handleEditProfileClick() {
         setisEditProfilePopupOpen(true);
@@ -26,10 +26,15 @@ function App() {
         setIsEditAvatarPopupOpen(true);
     }
 
+    function handleCardClick(props) {
+        setSelectedCard(props);
+    }
+
     function closeAllPopups() {
         setisEditProfilePopupOpen(false);
         setIsAddPlacePopupOpen(false);
         setIsEditAvatarPopupOpen(false);
+        setSelectedCard(false);
     }
 
 
@@ -39,7 +44,7 @@ function App() {
                 <Header />
                 <div className="main">
                     <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
-                        onEditAvatar={handleEditAvatarClick} />
+                        onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
                     <Footer />
                 </div>
             </div>
@@ -61,7 +66,7 @@ function App() {
 
             {/* <PopupWithForm name="delete" title="Вы уверены?" button="Да" onClose={closeAllPopups} /> */}
 
-            <ImagePopup />
+            <ImagePopup card={selectedCard} onClose={closeAllPopups} />
 
             
         </div>
