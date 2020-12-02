@@ -1,6 +1,5 @@
 import React from 'react';
 import '../index.css';
-import popupclose from '../images/Close Icon.svg';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -64,19 +63,7 @@ function App() {
 
             <ImagePopup />
 
-            <template id="elements">
-                <li className="element__cards">
-                    <img className="element__image" src="#" />
-                    <div className="element__info">
-                        <h2 className="element__title"></h2>
-                        <button className="element__like-button" type="button">
-                            <img className="element__like-image" src={popupclose} alt="Поставить лайк" />
-                        </button>
-                        <div className="element__likes"></div>
-                        <button className="element__delete-button" type="button"></button>
-                    </div>
-                </li>
-            </template>
+            
         </div>
     );
 }
