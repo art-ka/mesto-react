@@ -1,5 +1,3 @@
-import avatar from './utils';
-
 class Api {
     constructor(options) {
         this.baseUrl = options.baseUrl;
