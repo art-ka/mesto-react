@@ -51,38 +51,32 @@ function App() {
 
             {isEditProfilePopupOpen ? (
                 <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} >
-                    <>
                         <input type="text" id="name-input" value="" name="fullname" className="popup__field popup__field_input_name" required minLength="2" maxLength="40" />
                         <span id="name-input-error" className="popup__field-error" />
                         <input type="text" id="job-input" value="" name="job" className="popup__field popup__field_input_job"
                             required minLength="2" maxLength="200" />
                         <span id="job-input-error" className="popup__field-error" />
-                    </>
                 </PopupWithForm >
             ) : ("")
             }
 
             {isAddPlacePopupOpen ? (
                 <PopupWithForm name="add" title="Новое место" button="Создать" isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} >
-                    <>
                         <input type="text" id="title-input" placeholder="Название" value="" name="title"
                             className="popup__field popup__field_input_title" required minLength="2" maxLength="30" />
                         <span id="title-input-error" className="popup__field-error" />
                         <input type="url" id="url-input" placeholder="Ссылка на картинку" value="" name="picture"
                             className="popup__field popup__field_input_url" required />
                         <span id="url-input-error" className="popup__field-error" />
-                    </>
                 </PopupWithForm >
             ) : ("")
             }
 
             {isEditAvatarPopupOpen ? (
                 <PopupWithForm name="avatar" title="Обновить аватар" button="Сохранить" isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} >
-                    <>
                         <input type="url" id="url-input" value="" name="avatar"
                             className="popup__field popup__field_input_avatar" required />
                         <span id="url-input-error" className="popup__field-error" />
-                    </>
                 </PopupWithForm >
             ) : ("")
             }

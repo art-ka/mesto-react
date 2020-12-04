@@ -6,8 +6,8 @@ import api from '../utils/api';
 
 function Main(props) {
     const [userName, setUserName] = React.useState("");
-    const [userDescription, setUserDescription] = React.useState();
-    const [userAvatar, setUserAvatar] = React.useState();
+    const [userDescription, setUserDescription] = React.useState("");
+    const [userAvatar, setUserAvatar] = React.useState("");
 
     const [cards, setCards] = React.useState([]);
 
