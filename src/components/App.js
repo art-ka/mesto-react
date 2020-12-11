@@ -4,6 +4,7 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 import PopupWithForm from './PopupWithForm';
+import EditProfilePopup from './EditProfilePopup';
 import ImagePopup from './ImagePopup';
 import api from '../utils/api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
@@ -65,13 +66,7 @@ function App() {
             </div>
 
             {isEditProfilePopupOpen ? (
-                <PopupWithForm name="edit" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} >
-                        <input type="text" id="name-input" value="" name="fullname" className="popup__field popup__field_input_name" required minLength="2" maxLength="40" />
-                        <span id="name-input-error" className="popup__field-error" />
-                        <input type="text" id="job-input" value="" name="job" className="popup__field popup__field_input_job"
-                            required minLength="2" maxLength="200" />
-                        <span id="job-input-error" className="popup__field-error" />
-                </PopupWithForm >
+                <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />
             ) : ("")
             }
 
