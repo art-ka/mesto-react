@@ -33,7 +33,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
 
@@ -53,7 +53,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
 
@@ -73,7 +73,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
 
@@ -94,7 +94,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
 
@@ -111,7 +111,7 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
 
@@ -128,26 +128,34 @@ class Api {
                 return Promise.reject(`Ошибка: ${res.status}`);
             })
             .catch((err) => {
-                console.log(err); 
+                console.log(err);
             })
     }
+
+    changeLikeCardStatus(_id, isLiked) {
+        if (isLiked) {
+            return this.likeCard(_id);
+        }
+        return this.deleteLikeCard(_id);
+    }
+
 
     deleteCard(_id) {
-        return fetch(`https://mesto.nomoreparties.co/v1/cohort-17/cards/${_id}`, {
-            method: "DELETE",
-            headers: this.headers
-        })
-            .then(res => {
-                if (res.ok) {
-                    return res;
-                }
+    return fetch(`https://mesto.nomoreparties.co/v1/cohort-17/cards/${_id}`, {
+        method: "DELETE",
+        headers: this.headers
+    })
+        .then(res => {
+            if (res.ok) {
+                return res;
+            }
 
-                return Promise.reject(`Ошибка: ${res.status}`);
-            })
-            .catch((err) => {
-                console.log(err); 
-            })
-    }
+            return Promise.reject(`Ошибка: ${res.status}`);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
 }
 
 const api = new Api({

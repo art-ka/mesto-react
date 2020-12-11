@@ -13,7 +13,6 @@
     position: absolute;
 }
 
-
 .element__delete-button:hover {
     background: url(../../../images/basket-del.svg);
     background-repeat: no-repeat;
