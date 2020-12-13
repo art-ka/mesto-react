@@ -77,13 +77,13 @@ class Api {
             })
     }
 
-    editInfo(inputName, inputAbout) {
+    setUserInfo(data) {
         return fetch('https://mesto.nomoreparties.co/v1/cohort-17/users/me', {
             method: "PATCH",
             headers: this.headers,
             body: JSON.stringify({
-                name: inputName,
-                about: inputAbout
+                name: data.name,
+                about: data.about
             })
         })
             .then(res => {
