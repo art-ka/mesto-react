@@ -22,7 +22,7 @@ function Card(props) {
     );
     
     function handleClick() {
-        props.onCardClick(props);
+        props.onCardClick(props.card);
     }
 
     function handleLikeClick() {

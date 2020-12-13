@@ -9,7 +9,7 @@ function ImagePopup(props) {
                     <img className="popup__close-image" src={popupclose}
                         alt="Закрыть окно просмотра изображения" />
                 </button>
-                <img className="popup__image" src={props.card.src} alt={props.card.name} />
+                <img className="popup__image" src={props.card.link} alt={props.card.name} />
                 <h3 className="popup__caption">{props.card.name}</h3>
             </div>
         </section>
