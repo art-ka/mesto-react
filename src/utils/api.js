@@ -37,13 +37,13 @@ class Api {
             })
     }
 
-    addCard(inputTitle, inputUrl) {
+    addCard(dataCard) {
         return fetch('https://mesto.nomoreparties.co/v1/cohort-17/cards', {
             method: "POST",
             headers: this.headers,
             body: JSON.stringify({
-                name: inputTitle,
-                link: inputUrl
+                name: dataCard.name,
+                link: dataCard.link
             })
         })
             .then((res) => {
