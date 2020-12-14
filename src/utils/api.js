@@ -57,12 +57,12 @@ class Api {
             })
     }
 
-    changeAvatar(inputAvatar) {
+    changeAvatar(avatarInput) {
         return fetch('https://mesto.nomoreparties.co/v1/cohort-17/users/me/avatar', {
             method: "PATCH",
             headers: this.headers,
             body: JSON.stringify({
-                avatar: inputAvatar
+                avatar: avatarInput.avatar
             })
         })
             .then(res => {
