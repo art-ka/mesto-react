@@ -34,7 +34,7 @@ function Card(props) {
     }
 
     return (
-        <li className="element__cards" key={props.card._id}>
+        <li className="element__cards">
             <img className="element__image" src={props.card.link} onClick={handleClick} alt={props.card.name} />
             <div className="element__info">
                 <h2 className="element__title">{props.card.name}</h2>

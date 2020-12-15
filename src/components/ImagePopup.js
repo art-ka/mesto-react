@@ -1,9 +1,9 @@
 import React from 'react';
-import popupclose from '../images/Close Icon.svg';
+import popupclose from '../images/CloseIcon.svg';
 
 function ImagePopup(props) {
     return (
-        <section className={`popup popup_type_img ${props.card && "popup_opened"}`}>
+        <section className={`popup popup_type_img ${props.isOpen && "popup_opened"}`}>
             <div className="popup__container-img">
                 <button className="popup__close popup__close_type_img" type="button" onClick={props.onClose}>
                     <img className="popup__close-image" src={popupclose}

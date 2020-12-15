@@ -1,5 +1,5 @@
 import React from 'react';
-import popupclose from '../images/Close Icon.svg';
+import popupclose from '../images/CloseIcon.svg';
 
 function PopupWithForm(props) {
     return (
