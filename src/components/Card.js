@@ -1,5 +1,5 @@
 import React from 'react';
-import likebutton from '../images/heart.svg';
+import likeButton from '../images/heart.svg';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Card(props) {
@@ -39,7 +39,7 @@ function Card(props) {
             <div className="element__info">
                 <h2 className="element__title">{props.card.name}</h2>
                 <button className="element__like-button" type="button" onClick={handleLikeClick}>
-                    <img className={cardLikeButtonClassName} src={likebutton} alt="Поставить лайк" />
+                    <img className={cardLikeButtonClassName} src={likeButton} alt="Поставить лайк" />
                 </button>
                 <div className="element__likes">{props.card.likes.length}</div>
                 <button className={cardDeleteButtonClassName} type="button" onClick={handleDeleteClick}></button>
