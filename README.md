@@ -1,3 +1,22 @@
+# Social network user profile «Place» on React
+
+You can share, like, and delete photos on the site.
+
+The site is based on a layout from Figma and was created using the React library and JSX syntax.
+
+Was done:
+* Work with requests to the server.
+* Working with React.
+* Creation of functional and class components.
+* Using React hooks.
+* Create and use context, subscribe to it.
+* Use of refs, etc.
+
+**Development plan**
+
+Registration and authorization. Backend implementation.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
